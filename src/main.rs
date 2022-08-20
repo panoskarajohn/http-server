@@ -3,7 +3,10 @@ use rand::Rng;
 
 
 fn main() {
-  guessing_game();
+  //guessing_game();
+  let sum = sum_multiples_of_three_and_five(1000);
+  println!("{sum}");
+  
 }
 
 fn guessing_game() {
@@ -27,7 +30,9 @@ fn guessing_game() {
             Err(_) => continue,
         };
 
+        println!("**********************");
         println!("You guessed: {guess}");
+        println!("**********************");
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
@@ -38,4 +43,20 @@ fn guessing_game() {
             }
         }
     }
+}
+
+/// Returns the sum of all the numbers up to n
+/// where i are multiples of 5 or 3
+fn sum_multiples_of_three_and_five(n :u32) -> u32
+{
+    let mut sum = 0;
+    for i in 1..n {
+        if i % 3 == 0 || i % 5 == 0
+        {
+            sum += i;
+        }
+    }
+    // we do not need a return statement we just
+    // write the value we want to return without the ;
+    sum
 }
