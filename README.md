@@ -8,7 +8,7 @@ Just a small repo to start learning some rust
 * Sent over TCP
 * Message based
 
-##Testing
+## Testing
 
 ```
 cargo run
