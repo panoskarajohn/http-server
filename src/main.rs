@@ -1,20 +1,34 @@
-use std::io;
-
 fn main() {
+    let string = String::from("127.0.0.1:8080");
+    let string_slice = &string[10..]; // this is dangerous because these indices mean give from the
+                                      // 10 bytes untili the end
+    let string_borrow: &str = &string;
+    let string_literal = "1234";
 
-    println!("Enter your weight: ");
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
-
-    let weight: f32 = input.trim().parse().unwrap();
-    println!("Weight: {}", weight);
-
-
-    let mut weight_on_mars :f32 = calculate_weight_on_mars(weight);
-    weight_on_mars *= 1000.0;
-    println!("Weight on Mards: {}g", weight_on_mars);
+    dbg!(&string);
+    dbg!(string_slice);
+    dbg!(string_borrow);
+    dbg!(string_literal);
+    
+    //let server = Server::new();
+    //server.run();
 }
 
-fn calculate_weight_on_mars(weight: f32) -> f32 {
-    (weight / 9.81) * 3.711 
+struct Server {
+    address: String,
+}
+
+impl Server {
+
+   fn new(address: String)-> Self{
+       Self {
+            address
+       }
+   } 
+
+   fn run(self) {
+        
+
+   }
+
 }
