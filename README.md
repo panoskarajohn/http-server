@@ -26,4 +26,5 @@ Path is /search?name=abc&sort=1
 Protocol is HTTP/1.1
 ```
 
+All credits go to this course -> https://www.udemy.com/course/rust-fundamentals/
 
